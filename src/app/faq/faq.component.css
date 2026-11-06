@@ -1,0 +1,8 @@
+.faq-section { max-width: 640px; margin: 40px auto; font-family: sans-serif; }
+.faq-card { padding: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.faq-content { margin-top: 12px; }
+.no-faq { padding: 20px; color: #888; text-align: center; }
+.skeleton { height: 40px; margin: 8px 0; border-radius: 6px; background: #eee; }
+
+/* Marks server nodes Angular never claimed: they still have the ngh attribute. */
+:host ::ng-deep [ngh] { outline: 2px dashed red; }

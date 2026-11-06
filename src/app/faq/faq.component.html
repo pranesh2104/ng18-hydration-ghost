@@ -1,0 +1,30 @@
+<section class="faq-section">
+  <div class="faq-card">
+    @if (!isLoader) {
+    <h1 class="faq-title">Frequently Asked Questions</h1>
+    <br>
+    {{ storeFAQ?.rows?.length || 0 }}
+    @if (storeFAQ && storeFAQ.rows && storeFAQ.rows.length) {
+    <div class="faq-content">
+      <app-accordion>
+        @for (faq of storeFAQ.rows; track faq.id; let i = $index) {
+        <app-expansion (click)="clicked(i)">
+          <div panel-header class="faq-question">{{ faq.question }}</div>
+          <div panel-description class="faq-answer">{{ faq.answer }}</div>
+        </app-expansion>
+        }
+      </app-accordion>
+    </div>
+    }
+    @else {
+    <div class="no-faq">No questions added</div>
+    }
+    }
+    @else {
+    <div class="skeleton"></div>
+    @for (i of [1, 2, 3, 4]; track i) {
+    <div class="skeleton"></div>
+    }
+    }
+  </div>
+</section>
